@@ -88,7 +88,7 @@ export class ListOfContactsPageComponent implements OnInit {
         this.filterContacts();
     }
 
-    private updatePageData(): void {
+    public updatePageData(): void {
         const startIndex = this.currentPageIndex * this.pageSize;
         const endIndex = Math.min(startIndex + this.pageSize, this.filteredContacts.length);
         this.pagedContacts = this.filteredContacts.slice(startIndex, endIndex);

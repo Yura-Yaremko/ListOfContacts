@@ -12,7 +12,7 @@ import {ContactsService} from "../../services/contacts.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {IContact} from '../../interfaces/contract.interface';
 import {v4 as uuidv4} from 'uuid';
-import { phoneValidationRegex } from '../../regex';
+import {phoneValidationRegex} from '../../constants/regex';
 
 @Component({
     selector: 'app-edit-contact',

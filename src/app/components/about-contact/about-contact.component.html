@@ -2,20 +2,21 @@
     <mat-card-content class="content">
         <ng-container *ngIf="contact; else noUser">
             <div class="header">
-                <h1 class="title">{{contact.firstName}} {{contact.lastName}}</h1>
-                <p class="sub-title">{{contact.phoneNumber}}</p>
+                <h1 class="title">{{ contact.firstName }} {{ contact.lastName }}</h1>
+                <p class="sub-title">{{ contact.phoneNumber }}</p>
             </div>
 
-            <hr />
+            <hr/>
 
             <ul class="additional-info">
-                <li *ngIf="contact.email">{{contact.email}}</li>
-                <li  *ngIf="contact.birthDate">{{contact.birthDate | date}}</li>
-                <li  *ngIf="contact.addressOfResidence">{{contact.addressOfResidence}}</li>
+                <li *ngIf="contact.email">{{ contact.email }}</li>
+                <li *ngIf="contact.birthDate">{{ contact.birthDate | date }}</li>
+                <li *ngIf="contact.addressOfResidence">{{ contact.addressOfResidence }}</li>
             </ul>
 
             <div class="buttons-row">
-                <button mat-raised-button color="primary" (click)="navigateToEditContactPage(contact.id)">Редагувати</button>
+                <button mat-raised-button color="primary" (click)="navigateToEditContactPage(contact.id)">Редагувати
+                </button>
                 <button mat-raised-button color="warn" (click)="deleteContact(contact.id)">Видалити</button>
             </div>
         </ng-container>

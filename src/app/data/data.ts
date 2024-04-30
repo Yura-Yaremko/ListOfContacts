@@ -1,6 +1,6 @@
 import {IContact} from "../interfaces/contract.interface";
 
-export let CONTACTS: IContact[] = [
+export const CONTACTS: IContact[] = [
     {
         "id": "16fd2706-8baf-433b-82eb-8c7fada847da",
         "firstName": "Іван",

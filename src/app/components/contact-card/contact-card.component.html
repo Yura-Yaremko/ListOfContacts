@@ -1,11 +1,13 @@
 <div class="card-wrapper">
     <div class="content">
         <div class="card-header">
-            <h1 class="title">{{contact.firstName}} {{contact.lastName}}</h1>
-            <p class="sub-title">{{contact.phoneNumber}}</p>
+            <h1 class="title">{{ contact.firstName }} {{ contact.lastName }}</h1>
+            <p class="sub-title">{{ contact.phoneNumber }}</p>
         </div>
+
         <div class="buttons-row">
-            <button mat-raised-button color="primary" (click)="navigateToEditContactPage(contact.id)">Редагувати</button>
+            <button mat-raised-button color="primary" (click)="navigateToEditContactPage(contact.id)">Редагувати
+            </button>
             <button mat-raised-button (click)="navigateToAboutContactPage(contact.id)">Перейти до контакта</button>
             <button mat-raised-button color="warn" (click)="deleteContact(contact.id)">Видалити</button>
         </div>

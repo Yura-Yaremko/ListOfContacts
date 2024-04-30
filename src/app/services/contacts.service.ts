@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
 import {IContact, ICreateOrUpdateContact} from "../interfaces/contract.interface";
 import {CONTACTS} from "../data/data";
-import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactsService {
   public contacts: IContact[] = CONTACTS;
-  public contacts$:BehaviorSubject<IContact[]> = new BehaviorSubject(CONTACTS);
 
   public nameOfContactKey = 'allContacts'
 
