@@ -1,0 +1,31 @@
+<mat-card>
+    <mat-card-content class="content">
+        <ng-container *ngIf="contact; else noUser">
+            <div class="header">
+                <h1 class="title">{{contact.firstName}} {{contact.lastName}}</h1>
+                <p class="sub-title">{{contact.phoneNumber}}</p>
+            </div>
+
+            <hr />
+
+            <ul class="additional-info">
+                <li *ngIf="contact.email">{{contact.email}}</li>
+                <li  *ngIf="contact.birthDate">{{contact.birthDate | date}}</li>
+                <li  *ngIf="contact.addressOfResidence">{{contact.addressOfResidence}}</li>
+            </ul>
+
+            <div class="buttons-row">
+                <button mat-raised-button color="primary" (click)="navigateToEditContactPage(contact.id)">Редагувати</button>
+                <button mat-raised-button color="warn" (click)="deleteContact(contact.id)">Видалити</button>
+            </div>
+        </ng-container>
+
+        <ng-template #noUser>
+            <div class="no-user">
+                <h1 class="title">Контакт не знайдено</h1>
+                <button (click)="navigateToCreateContact()" mat-raised-button>Створити новий контакт</button>
+            </div>
+        </ng-template>
+
+    </mat-card-content>
+</mat-card>

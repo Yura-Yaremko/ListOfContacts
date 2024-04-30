@@ -1,0 +1,59 @@
+@import "../../scss/variables";
+@import "../../scss/placeholders";
+
+.content {
+  background-color: $color__grey__99;
+  border-bottom: 2px solid $color__silver;
+  border-right: 2px solid $color__silver;
+  box-shadow: 0 15px 15px 0 rgba(0,0,0,0.23);
+  width: 350px;
+}
+
+.header {
+
+  .title {
+    font: $font__bold;
+    color: $color__grey__10;
+    margin-bottom: 10px;
+  }
+
+  .sub-title {
+    font: $font__regular;
+    color: $color__grey__60;
+  }
+}
+
+hr {
+  margin: 10px 0;
+}
+
+.additional-info {
+  padding-left: 16px;
+
+  li {
+    font: $font__regular;
+    color: $color__grey__10;
+    margin-bottom: 15px;
+  }
+}
+
+.buttons-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  button {
+    margin: 10px;
+  }
+}
+
+.no-user {
+  @extend %flex-center;
+  flex-direction: column;
+  padding: 20px;
+
+  .title {
+    margin-bottom: 20px;
+  }
+}

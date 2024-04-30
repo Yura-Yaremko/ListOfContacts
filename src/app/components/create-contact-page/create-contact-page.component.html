@@ -1,0 +1,37 @@
+<mat-card class="page-wrapper">
+    <mat-card-content class="form-wrapper">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <mat-form-field class="field-wrapper">
+                <mat-label>Ім'я</mat-label>
+                <input type="text" matInput formControlName="firstName" placeholder="Ім'я">
+                <mat-error *ngIf="contactForm.get('firstName')?.invalid
+                && (contactForm.get('firstName')?.dirty
+                || contactForm.get('firstName')?.touched)">
+                    Ім'я обов'язкове
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="field-wrapper">
+                <mat-label>Прізвище</mat-label>
+                <input type="text" matInput formControlName="lastName" placeholder="Прізвище">
+                <mat-error *ngIf="contactForm.get('lastName')?.invalid
+                && (contactForm.get('lastName')?.dirty
+                || contactForm.get('lastName')?.touched)">
+                    Прізвище обов'язкове
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="field-wrapper">
+                <mat-label>Номер телефону</mat-label>
+                <input type="text" matInput formControlName="phoneNumber" placeholder="Номер телефону">
+                <mat-error *ngIf="contactForm.get('phoneNumber')?.invalid
+                && (contactForm.get('phoneNumber')?.dirty
+                || contactForm.get('phoneNumber')?.touched)">
+                    Номер телефону повинен містити 10 цифр
+                </mat-error>
+            </mat-form-field>
+
+            <button [disabled]="contactForm.invalid" mat-raised-button type="submit">Створити</button>
+        </form>
+    </mat-card-content>
+</mat-card>

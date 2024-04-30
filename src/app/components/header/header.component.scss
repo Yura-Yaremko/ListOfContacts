@@ -1,0 +1,31 @@
+@import "../../scss/variables";
+@import "../../scss/placeholders";
+
+.menu {
+  @extend %flex-center;
+  height: 100px;
+  width: 100%;
+  background-color: $color__grey__99;
+  border-bottom: 2px solid $color__silver;
+  box-shadow: 0 10px 5px 0 rgba(0,0,0,0.23);
+
+  .link {
+    padding: 15px;
+    text-decoration: none;
+    color: $color__grey__60;
+    font-family: $font__regular;
+    margin: 5px;
+  }
+
+  .link:hover {
+    background-color: $color__grey__80;
+    color: $color__white;
+    box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.23);
+  }
+
+  .active-link {
+    background-color: $color__purple;
+    color: $color__white;
+    box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.23);
+  }
+}

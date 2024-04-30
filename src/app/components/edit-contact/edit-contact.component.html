@@ -1,0 +1,64 @@
+<mat-card class="page-wrapper">
+    <mat-card-content class="form-wrapper">
+        <form [formGroup]="editContactForm" (ngSubmit)="onSubmit()">
+            <mat-form-field class="field-wrapper">
+                <mat-label>Ім'я</mat-label>
+                <input type="text" matInput formControlName="firstName" placeholder="Ім'я">
+                <mat-error *ngIf="editContactForm.get('firstName')?.invalid
+                && (editContactForm.get('firstName')?.dirty
+                || editContactForm.get('firstName')?.touched)">
+                    Ім'я обов'язкове
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="field-wrapper">
+                <mat-label>Прізвище</mat-label>
+                <input type="text" matInput formControlName="lastName" placeholder="Прізвище">
+                <mat-error *ngIf="editContactForm.get('lastName')?.invalid
+                && (editContactForm.get('lastName')?.dirty
+                || editContactForm.get('lastName')?.touched)">
+                    Прізвище обов'язкове
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="field-wrapper">
+                <mat-label>Номер телефону</mat-label>
+                <input type="text" matInput formControlName="phoneNumber" placeholder="Номер телефону">
+                <mat-error *ngIf="editContactForm.get('phoneNumber')?.invalid
+                && (editContactForm.get('phoneNumber')?.dirty
+                || editContactForm.get('phoneNumber')?.touched)">
+                    Номер телефону повинен містити 10 цифр
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="field-wrapper">
+                <mat-label>Електронна пошта</mat-label>
+                <input type="text" matInput formControlName="email" placeholder="Електронна пошта">
+                <mat-error *ngIf="editContactForm.get('email')?.invalid
+                || editContactForm.get('phoneNumber')?.touched">
+                    Не вірно вказана електронна пошта
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="field-wrapper">
+                <mat-label>Дата народження</mat-label>
+                <input formControlName="birthDate" matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+                <mat-error *ngIf="editContactForm.get('birthDate')?.invalid
+                || editContactForm.get('birthDate')?.touched">
+                    Не вірно вказана дата
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="field-wrapper">
+                <mat-label>Адреса</mat-label>
+                <input type="text" matInput formControlName="addressOfResidence" placeholder="Адреса">
+            </mat-form-field>
+
+            <button [disabled]="editContactForm.invalid" mat-raised-button type="submit">Редагувати</button>
+        </form>
+    </mat-card-content>
+</mat-card>
+
+

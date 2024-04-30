@@ -1,0 +1,48 @@
+@import "../../scss/variables";
+@import "../../scss/placeholders";
+
+.card-wrapper {
+  border: 1px solid $color__purple;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.23);
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-header {
+  background-color: $color__grey__99;
+  border-bottom: 2px solid $color__silver;
+  box-shadow: 0 5px 5px 0 rgba(0,0,0,0.23);
+  padding: 20px;
+  width: 100%;
+  border-radius: 20px 20px 0 0;
+
+  .title {
+    font: $font__bold;
+    color: $color__grey__10;;
+    margin-bottom: 10px;
+  }
+
+  .sub-title {
+    font: $font__regular;
+    color: $color__grey__60;
+  }
+}
+
+.buttons-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+
+  button {
+    margin: 10px;
+  }
+}

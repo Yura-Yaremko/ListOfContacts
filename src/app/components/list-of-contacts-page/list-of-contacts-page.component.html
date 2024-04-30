@@ -1,0 +1,27 @@
+<mat-card class="card-wrapper">
+    <mat-form-field class="input-field">
+        <mat-label>Знайти контакт</mat-label>
+        <input matInput placeholder="Знайти контакт" [(ngModel)]="searchTerm" (input)="filterContacts()">
+    </mat-form-field>
+
+    <mat-card-content class="contact-card-container" *ngIf="!noSuchUser && pagedContacts.length; else noContact">
+
+        <app-contact-card *ngFor="let contact of pagedContacts" (updateContacts)="requestContacts()"
+                          [contact]="contact"></app-contact-card>
+
+    </mat-card-content>
+
+    <ng-template #noContact>
+        <mat-card-content class="no-contact-card">
+            <div class="no-contact">
+                <h1 class="title">Контакти не знайдено</h1>
+                <button (click)="navigateToCreateContact()" mat-raised-button>Створити новий контакт</button>
+            </div>
+        </mat-card-content>
+    </ng-template>
+
+    <mat-paginator class="paginator" [pageSize]="pageSize" [pageIndex]="currentPageIndex"
+                   [length]="totalContacts" (page)="onPageChange($event)">
+    </mat-paginator>
+</mat-card>
+
